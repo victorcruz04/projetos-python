@@ -1,0 +1,258 @@
+from tkinter import *
+
+
+root = Tk()
+root.title('CALCULADORA')
+root.geometry('490x421')
+root.minsize(490,421)
+root.maxsize(490,421)
+
+numero2 = ''
+divisao = FALSE
+
+
+root.configure(background = 'black')
+
+e = Entry(root,width=15,borderwidth = 15, relief = SUNKEN,fg ='white',bg='black',font=('arial',25,'bold'),justify=CENTER)
+e.grid(
+    row=0,
+    column=0,
+    columnspan=4,
+    pady=2
+)
+# operadores
+def botao_clique(num):
+    e.insert(END,num)
+    return
+def botao_div():
+    global numero2 
+    global divisao
+    divisao=TRUE
+    numero2=e.get()
+    e.delete(0,END)
+   
+def botao_multiplica():
+    return
+def botao_menos():
+    return
+def botao_soma():
+    return
+def botao_limpa():
+    return
+def botao_igual():
+    return
+    
+bot_divide = Button(root,
+                    text='/',
+                    padx=45,
+                    pady=22,
+                    command=botao_div(),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+                    
+                    )
+bot_divide.grid(row=0,column=4)
+# primeira fileira
+um = Button(root,
+                    text='1',
+                    padx=45,
+                    pady=22,
+                    command=lambda: botao_clique(1),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+                    
+)
+um.grid(row=1,column=1)
+dois = Button(root,
+                    text='2',
+                    padx=45,
+                    pady=22,
+                    command=lambda: botao_clique(2),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+dois.grid(row=1,column=2)
+tres = Button(root,
+                    text='3',
+                    padx=45,
+                    pady=22,
+                    command=lambda: botao_clique(3),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+tres.grid(row=1,column=3)
+multiplica = Button(root,
+                    text='*',
+                    padx=47,
+                    pady=22,
+                    command= botao_multiplica,
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+multiplica.grid(row=1,column=4)
+#segunda fileira
+quatro = Button(root,
+                    text='4',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(4),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+quatro.grid(row=2,column=1)
+cinco = Button(root,
+                    text='5',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(5),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+cinco.grid(row=2,column=2)
+seis = Button(root,
+                    text='6',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(6),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+seis.grid(row=2,column=3)
+menos = Button(root,
+                    text='-',
+                    padx=47,
+                    pady=22,
+                    command= botao_menos,
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+menos.grid(row=2,column=4)
+#terceira fileira
+sete = Button(root,
+                    text='7',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(7),
+                    fg='black',
+                    activeforeground='#990000',
+                    bg='red',
+                    activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+sete.grid(row=3,column=1)
+oito = Button(root,
+                    text='8',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(8),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+oito.grid(row=3,column=2)
+nove = Button(root,
+                    text='9',
+                    padx=45,
+                    pady=22,
+                    command= lambda: botao_clique(9),
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+nove.grid(row=3,column=3)
+soma = Button(root,
+                    text='+',
+                    padx=45,
+                    pady=22,
+                    command= botao_soma,
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+soma.grid(row=3,column=4)
+zero = Button(root,
+                    text='0',
+                    padx=110,
+                    pady=22,
+                    command= lambda: botao_clique(0),
+                    fg='black',
+                    activeforeground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+zero.grid(row=4,column= 1,columnspan=2)
+limpa = Button(root,
+                    text='c',
+                    padx=45,
+                    pady=22,
+                    command= botao_limpa,
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+limpa.grid(row=4,column=3)
+igual = Button(root,
+                    text='=',
+                    padx=45,
+                    pady=22,
+                    command= botao_igual,
+                    fg='black',
+                    activebackground='#990000',
+                    bg='red',
+                    #activebackground='yellow',
+                    relief=FLAT,
+                    font=('arial',12,'bold')
+)
+igual.grid(row=4,column=4)
+root.mainloop()
