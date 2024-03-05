@@ -1,0 +1,28 @@
+import tkinter as tk
+root = tk.Tk()
+
+root.geometry('600x600')
+root.title('contador de clicks')
+root.configure(background='#990000')
+numero = 0
+
+def acrescentar():
+    global numero
+    numero += 1
+    contagem_click.configure(text=numero)
+def diminuir():
+    global numero
+    numero -= 1
+    contagem_click.configure(text=numero)
+    
+
+margem = tk.Canvas(root,height=200,background='#990000',bd=0,highlightthickness=0,relief='flat')
+margem.pack()
+botao_adicionar = tk.Button(root,bg='white',text='+',font=('Montserrat',16,'bold'),padx=10,command = acrescentar)
+botao_adicionar.pack()
+contagem_click= tk.Label(root,text=numero,bg='#990000',font=('Montserrat',16,'bold'))
+contagem_click.pack()
+
+botao_diminuir = tk.Button(root,bg='white',text='-',font=('Montserrat',16,'bold'),padx=10,command=diminuir)
+botao_diminuir.pack()
+root.mainloop()
