@@ -1,0 +1,17 @@
+import random
+
+letra_maiuscula = chr(random.randint(65,90))
+letra_minuscula = chr(random.randint(97,122))
+print(letra_maiuscula)
+char_especial = chr(33)
+lista_numeros = []
+for index in range(7): # ate 8 digitos
+    numeros = random.randrange(9)
+    lista_numeros.append(numeros)
+random.shuffle(lista_numeros)
+
+lista_numeros = str(lista_numeros) [1:-1]
+lista_numeros = lista_numeros.replace(',','')
+
+print('Gerador de senhas')
+print(letra_maiuscula,letra_maiuscula,lista_numeros,char_especial)
